@@ -1,0 +1,52 @@
+float olhoX = 0;
+float direcao = 1;
+
+void setup() {
+  size(500, 500);
+  background(#FFFFFF);
+  frameRate(60);
+}
+
+void draw() {
+  background(#FFFFFF);
+  strokeWeight(2);
+  
+  // Cabeça (retângulo)
+  fill(#FC9321);
+  rect(100, 150, 300, 200);
+  
+  // Orelhas
+  fill(#FC9321);
+  triangle(100, 150, 150, 50, 200, 150); // esquerda
+  triangle(300, 150, 350, 50, 400, 150); // direita
+
+  // Olhos
+  fill(255);
+  circle(180, 250, 60); // olho esquerdo
+  circle(320, 250, 60); // olho direito
+
+  // Pupilas animadas
+  fill(0);
+  circle(180 + olhoX, 250, 20); // pupila esquerda
+  circle(320 + olhoX, 250, 20); // pupila direita
+
+  // Nariz
+  fill(#DB738D);
+  triangle(240, 290, 260, 290, 250, 305);
+
+  // bigodes
+  stroke(0);
+  line(160, 290, 90, 280);
+  line(160, 300, 90, 300);
+  line(160, 310, 90, 320);
+
+  line(340, 290, 410, 280);
+  line(340, 300, 410, 300);
+  line(340, 310, 410, 320);
+
+  // Movimento dos olhos
+  olhoX += direcao;
+  if (olhoX > 10 || olhoX < -10) {
+    direcao *= -1;
+  }
+}
