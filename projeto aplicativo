@@ -1,0 +1,23 @@
+
+void setup() {
+  size(400, 200);
+  textAlign(CENTER, CENTER);
+  textSize(20);
+}
+
+void draw() {
+  background(200);
+  fill(0);
+  rect(100, 80, 200, 40);
+  fill(255);
+  text("abrir vídeo", 200, 100);
+
+  // Mostra as coordenadas do mouse no console
+  println("X:", mouseX, "Y:", mouseY);
+}
+
+void mousePressed() {
+  if (mouseX > 100 && mouseX < 300 && mouseY > 80 && mouseY < 120) {
+    link("https://www.youtube.com/watch?v=nyvVCeDrSH0");
+  }
+}
